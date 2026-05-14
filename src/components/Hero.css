@@ -79,19 +79,22 @@
 /* Title */
 .hero__title {
   font-family: var(--font-hero);
-  font-size: clamp(2.2rem, 8vw, 7rem);
+  font-size: 7.8vw;
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -1px;
   text-transform: uppercase;
-  word-break: normal;
-  padding: 0 10px;
+  white-space: nowrap;
+  padding: 0;
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .hero__title-line {
   display: block;
+  white-space: nowrap;
 }
 
 /* Subtitle */
@@ -201,9 +204,10 @@
   }
 
   .hero__title {
-    font-size: clamp(1.3rem, 6.2vw, 3.2rem);
-    letter-spacing: -0.5px;
+    font-size: 5.5vw;
+    letter-spacing: -0.3px;
     padding: 0;
+    white-space: nowrap;
   }
 
   .hero__title-line {
