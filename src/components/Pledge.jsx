@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import './Pledge.css'
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxNEhevTxkkgW8fdpAfSgRnRepqiZ33Wpe1ThmezjkpdCXkISl_c2Xsrkbrgu1VK_UUpg/exec';
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
+const BACKEND_SECRET_TOKEN = import.meta.env.VITE_BACKEND_SECRET_TOKEN || '';
 
 // Animated number counter
 function AnimatedCounter({ value, duration = 2 }) {
@@ -95,7 +96,8 @@ export default function Pledge() {
           mode: 'no-cors',
           body: new URLSearchParams({ 
             action: 'pledge',
-            name: name
+            name: name,
+            token: BACKEND_SECRET_TOKEN
           })
         });
       } catch (err) {

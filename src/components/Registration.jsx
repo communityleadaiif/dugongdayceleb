@@ -2,7 +2,8 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import './Registration.css'
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxNEhevTxkkgW8fdpAfSgRnRepqiZ33Wpe1ThmezjkpdCXkISl_c2Xsrkbrgu1VK_UUpg/exec'
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || ''
+const BACKEND_SECRET_TOKEN = import.meta.env.VITE_BACKEND_SECRET_TOKEN || ''
 
 const indianStates = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
@@ -46,15 +47,15 @@ export default function Registration() {
     // File type validation
     if (activeTab === 'article') {
       const ext = file.name.toLowerCase().split('.').pop()
-      if (!['doc', 'docx'].includes(ext)) return 'Article must be in .doc or .docx format'
+      if (!['doc', 'docx', 'pdf'].includes(ext)) return 'Article must be in .doc, .docx, or .pdf format'
     }
     if (activeTab === 'drawing') {
       const ext = file.name.toLowerCase().split('.').pop()
       if (!['jpg', 'jpeg', 'pdf', 'png'].includes(ext)) return 'Drawing must be in JPG, PNG, or PDF format'
     }
 
-    // File size validation (10MB max)
-    if (file.size > 10 * 1024 * 1024) return 'File size must be less than 10MB'
+    // File size validation (5MB max aligned with server protection rules)
+    if (file.size > 5 * 1024 * 1024) return 'File size must be less than 5MB'
 
     return null
   }
@@ -71,7 +72,7 @@ export default function Registration() {
 
     try {
       if (!GOOGLE_SCRIPT_URL) {
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        await new Promise(resolve => setTimeout(resolve, 1500))
         setSubmitStatus('success')
         return
       }
@@ -90,7 +91,8 @@ export default function Registration() {
         submissionType: activeTab,
         fileName: file.name,
         fileData: base64File,
-        mimeType: file.type
+        mimeType: file.type,
+        token: BACKEND_SECRET_TOKEN
       })
 
       const response = await fetch(GOOGLE_SCRIPT_URL, {

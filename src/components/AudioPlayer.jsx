@@ -23,9 +23,9 @@ export default function AudioPlayer() {
 
   const togglePlay = () => {
     if (isPlaying) {
-      audioRef.current.pause()
+      audioRef.current?.pause()
     } else {
-      audioRef.current.play()
+      audioRef.current?.play().catch(() => console.log("Manual play override required"))
     }
     setIsPlaying(!isPlaying)
   }

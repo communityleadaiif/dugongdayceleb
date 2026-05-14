@@ -94,6 +94,15 @@ export default function DugongGame() {
     if (!canvas) return
     const ctx = canvas.getContext('2d')
 
+    // Handle high-DPI scaling dynamically mapping logical metrics
+    const dpr = window.devicePixelRatio || 1
+    const cw = canvas.clientWidth || 800
+    const ch = canvas.clientHeight || 320
+
+    canvas.width = cw * dpr
+    canvas.height = ch * dpr
+    ctx.scale(dpr, dpr)
+
     let animationFrameId
     let isGameRunning = gameState === 'playing'
 
@@ -105,7 +114,7 @@ export default function DugongGame() {
     // Dugong state
     const dugong = {
       x: 80,
-      y: canvas.height / 2,
+      y: ch / 2,
       w: 48,
       h: 24,
       vy: 0,
@@ -154,8 +163,8 @@ export default function DugongGame() {
 
     // Floating bubble particles for deep sea feel
     let particles = Array.from({ length: 15 }).map(() => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+      x: Math.random() * cw,
+      y: Math.random() * ch,
       size: Math.random() * 3 + 1,
       speed: Math.random() * 2 + 1,
     }))
@@ -275,15 +284,15 @@ export default function DugongGame() {
     const gameLoop = () => {
       // Clear Background
       ctx.fillStyle = '#000814'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.fillRect(0, 0, cw, ch)
 
       // Draw subtle ambient grid/layers
       ctx.strokeStyle = 'rgba(0, 245, 212, 0.03)'
       ctx.lineWidth = 1
-      for (let i = 0; i < canvas.width; i += 40) {
+      for (let i = 0; i < cw; i += 40) {
         ctx.beginPath()
         ctx.moveTo(i, 0)
-        ctx.lineTo(i, canvas.height)
+        ctx.lineTo(i, ch)
         ctx.stroke()
       }
 
@@ -292,8 +301,8 @@ export default function DugongGame() {
       particles.forEach((p) => {
         p.x -= p.speed
         if (p.x < 0) {
-          p.x = canvas.width
-          p.y = Math.random() * canvas.height
+          p.x = cw
+          p.y = Math.random() * ch
         }
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
@@ -326,8 +335,8 @@ export default function DugongGame() {
           dugong.y = 12
           dugong.vy = 0
         }
-        if (dugong.y > canvas.height - dugong.h - 14) {
-          dugong.y = canvas.height - dugong.h - 14
+        if (dugong.y > ch - dugong.h - 14) {
+          dugong.y = ch - dugong.h - 14
           dugong.vy = 0
         }
 
@@ -341,12 +350,12 @@ export default function DugongGame() {
           const types = ['mine', 'anchor', 'waste', 'ghostnet', 'plasticbag']
           const randomType = types[Math.floor(Math.random() * types.length)]
           
-          let obsY = Math.random() * (canvas.height - 110) + 25
+          let obsY = Math.random() * (ch - 110) + 25
           let obsW = 30
           let obsH = 24
 
           if (randomType === 'anchor') {
-            obsY = canvas.height - 44 // Bottom anchored directly on the seabed
+            obsY = ch - 44 // Bottom anchored directly on the seabed
             obsH = 30
           } else if (randomType === 'waste') {
             obsY = Math.random() * 45 + 15 // High up floating
@@ -359,7 +368,7 @@ export default function DugongGame() {
           }
 
           obstacles.push({
-            x: canvas.width,
+            x: cw,
             y: obsY,
             w: obsW,
             h: obsH,
@@ -408,29 +417,29 @@ export default function DugongGame() {
 
       // Render Base Bottom Sea Floor
       ctx.fillStyle = '#001d3d'
-      ctx.fillRect(0, canvas.height - 14, canvas.width, 14)
+      ctx.fillRect(0, ch - 14, cw, 14)
 
       // Render Swaying & Scrolling Green Seaweed Floor (The Greens!)
       ctx.save()
       const sway = Math.sin(frameCount * 0.08) * 4
-      for (let x = -floraOffset; x < canvas.width; x += 40) {
+      for (let x = -floraOffset; x < cw; x += 40) {
         // Deep Green Kelp Strand
         ctx.fillStyle = '#15803d'
-        ctx.fillRect(x + sway, canvas.height - 34, 6, 22)
+        ctx.fillRect(x + sway, ch - 34, 6, 22)
         ctx.fillStyle = '#16a34a'
-        ctx.fillRect(x + sway + 1, canvas.height - 44, 4, 10) // Light tip
+        ctx.fillRect(x + sway + 1, ch - 44, 4, 10) // Light tip
 
         // Bright Lime Flora Clump
         ctx.fillStyle = '#22c55e'
-        ctx.fillRect(x + 18 - sway * 0.5, canvas.height - 24, 5, 12)
+        ctx.fillRect(x + 18 - sway * 0.5, ch - 24, 5, 12)
         ctx.fillStyle = '#4ade80'
-        ctx.fillRect(x + 19 - sway * 0.5, canvas.height - 30, 3, 6)
+        ctx.fillRect(x + 19 - sway * 0.5, ch - 30, 3, 6)
       }
       ctx.restore()
 
       // Render Cavern Roof Border
       ctx.fillStyle = '#001226'
-      ctx.fillRect(0, 0, canvas.width, 10)
+      ctx.fillRect(0, 0, cw, 10)
 
       // Render Dugong Avatar
       drawPixelDugong(dugong.x, dugong.y)
@@ -493,8 +502,6 @@ export default function DugongGame() {
           <div className="arcade__canvas-wrapper">
             <canvas
               ref={canvasRef}
-              width={800}
-              height={320}
               className="arcade__canvas"
             />
 
