@@ -209,20 +209,61 @@
   to { opacity: 1; }
 }
 
-@media (max-width: 600px) {
+/* Dedicated Mobile Controls Bar */
+.arcade__mobile-controls {
+  display: none;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.arcade__mobile-btn {
+  width: 100%;
+  padding: 16px 20px !important;
+  font-family: var(--font-accent) !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 4px 20px rgba(0, 245, 212, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .arcade__mobile-controls {
+    display: block;
+  }
+
   .arcade__console {
     padding: var(--space-md) !important;
+    gap: 12px;
   }
 
   .arcade__scorebar {
-    padding: 8px 16px;
+    padding: 8px 14px;
   }
 
   .arcade__score-digits {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .arcade__overlay h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+
+  .arcade__pixel-btn {
+    padding: 10px 20px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .arcade__controls-footer {
+    gap: 8px 14px;
+  }
+
+  .arcade__control-item {
+    font-size: 0.75rem;
   }
 }
+

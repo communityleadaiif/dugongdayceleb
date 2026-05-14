@@ -78,6 +78,16 @@ export default function DugongGame() {
     }
   }
 
+  // Input Controller
+  const handleSwim = () => {
+    if (gameState === 'playing') {
+      playSound('swim')
+    } else if (gameState === 'start' || gameState === 'gameover') {
+      setGameState('playing')
+      setScore(0)
+    }
+  }
+
   // Core Game Engine Loop
   useEffect(() => {
     const canvas = canvasRef.current
@@ -103,6 +113,38 @@ export default function DugongGame() {
       jumpPower: -6.5,
       maxFall: 7,
     }
+
+    // Dynamic swim integration triggered by react state callback scope mapping
+    const performSwimImpulse = () => {
+      if (isGameRunning) {
+        dugong.vy = dugong.jumpPower
+        playSound('swim')
+      }
+    }
+
+    // Attach local input event listener callback cleanly
+    const handleKeyDown = (e) => {
+      if (e.code === 'Space' || e.code === 'ArrowUp') {
+        e.preventDefault()
+        if (gameState === 'playing') {
+          performSwimImpulse()
+        } else {
+          setGameState('playing')
+          setScore(0)
+        }
+      }
+    }
+
+    // Touch/click directly on canvas triggers swimming without preventing page scroll on mobile unless actively playing
+    const handleCanvasTouch = (e) => {
+      if (gameState === 'playing') {
+        e.preventDefault() // Only lock scrolling when active gameplay is happening
+        performSwimImpulse()
+      }
+    }
+
+    // Expose dynamic imperative callback handler onto window object scoped to this canvas for external tap triggers
+    canvas.performSwimImpulse = performSwimImpulse
 
     // Obstacles array
     let obstacles = []
@@ -225,33 +267,9 @@ export default function DugongGame() {
       ctx.restore()
     }
 
-    // Input Controller
-    const handleSwim = () => {
-      if (gameState === 'playing') {
-        dugong.vy = dugong.jumpPower
-        playSound('swim')
-      } else if (gameState === 'start' || gameState === 'gameover') {
-        setGameState('playing')
-        setScore(0)
-      }
-    }
-
-    // Attach local input event listener callback
-    const handleKeyDown = (e) => {
-      if (e.code === 'Space' || e.code === 'ArrowUp') {
-        e.preventDefault()
-        handleSwim()
-      }
-    }
-
-    const handleCanvasClick = (e) => {
-      e.preventDefault()
-      handleSwim()
-    }
-
     window.addEventListener('keydown', handleKeyDown)
-    canvas.addEventListener('mousedown', handleCanvasClick)
-    canvas.addEventListener('touchstart', handleCanvasClick, { passive: false })
+    canvas.addEventListener('mousedown', handleCanvasTouch)
+    canvas.addEventListener('touchstart', handleCanvasTouch, { passive: false })
 
     // Render Game Loop
     const gameLoop = () => {
@@ -429,8 +447,8 @@ export default function DugongGame() {
       cancelAnimationFrame(animationFrameId)
       window.removeEventListener('keydown', handleKeyDown)
       if (canvas) {
-        canvas.removeEventListener('mousedown', handleCanvasClick)
-        canvas.removeEventListener('touchstart', handleCanvasClick)
+        canvas.removeEventListener('mousedown', handleCanvasTouch)
+        canvas.removeEventListener('touchstart', handleCanvasTouch)
       }
     }
   }, [gameState])
@@ -488,7 +506,14 @@ export default function DugongGame() {
                 <p>Press <strong>SPACEBAR</strong> or <strong>TAP SCREEN</strong> to Swim Upwards</p>
                 <button
                   className="btn btn-primary arcade__pixel-btn"
-                  onClick={() => setGameState('playing')}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setGameState('playing')
+                  }}
+                  onTouchStart={(e) => {
+                    e.stopPropagation()
+                    setGameState('playing')
+                  }}
                 >
                   🚀 START SWIMMING
                 </button>
@@ -507,7 +532,13 @@ export default function DugongGame() {
                 )}
                 <button
                   className="btn btn-gold arcade__pixel-btn"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setGameState('playing')
+                    setScore(0)
+                  }}
+                  onTouchStart={(e) => {
+                    e.stopPropagation()
                     setGameState('playing')
                     setScore(0)
                   }}
@@ -517,6 +548,30 @@ export default function DugongGame() {
               </div>
             )}
           </div>
+
+          {/* Dedicated Mobile Control Tap Bar (Highly accessible for thumbs on mobile viewports) */}
+          {gameState === 'playing' && (
+            <div className="arcade__mobile-controls">
+              <motion.button
+                className="btn btn-primary arcade__mobile-btn"
+                onClick={(e) => {
+                  e.preventDefault()
+                  if (canvasRef.current?.performSwimImpulse) {
+                    canvasRef.current.performSwimImpulse()
+                  }
+                }}
+                onTouchStart={(e) => {
+                  e.preventDefault()
+                  if (canvasRef.current?.performSwimImpulse) {
+                    canvasRef.current.performSwimImpulse()
+                  }
+                }}
+                whileTap={{ scale: 0.96 }}
+              >
+                👆 TAP HERE TO SWIM UP
+              </motion.button>
+            </div>
+          )}
 
           {/* Bottom Guidelines Prompt */}
           <div className="arcade__controls-footer">
