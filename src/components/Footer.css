@@ -1,0 +1,126 @@
+.footer {
+  position: relative;
+  background: var(--navy);
+  padding: var(--space-4xl) var(--space-xl) var(--space-xl);
+  z-index: 2;
+}
+
+.footer__wave {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+}
+
+.footer__wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.footer__title {
+  font-size: 1.4rem;
+  margin-bottom: var(--space-sm);
+}
+
+.footer__tagline {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--bioluminescent);
+  opacity: 0.7;
+  margin-bottom: var(--space-md);
+}
+
+.footer__tribute {
+  font-size: 0.85rem;
+  opacity: 0.5;
+  line-height: 1.7;
+}
+
+.footer__tribute span {
+  font-style: italic;
+}
+
+.footer__links h5,
+.footer__contact h5 {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--bioluminescent);
+  margin-bottom: var(--space-md);
+}
+
+.footer__links ul,
+.footer__contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__links li,
+.footer__contact li {
+  padding: 4px 0;
+  font-size: 0.88rem;
+  opacity: 0.6;
+}
+
+.footer__links a {
+  color: var(--foam);
+  transition: color 0.3s;
+}
+
+.footer__links a:hover {
+  color: var(--bioluminescent);
+}
+
+/* Hashtags bar */
+.footer__hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: var(--space-lg);
+}
+
+.footer__hashtag {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  color: var(--bioluminescent);
+  opacity: 0.4;
+  letter-spacing: 0.5px;
+}
+
+/* Bottom */
+.footer__bottom {
+  text-align: center;
+}
+
+.footer__bottom p {
+  font-size: 0.8rem;
+  opacity: 0.4;
+}
+
+.footer__sdg {
+  margin-top: 4px;
+}
+
+.footer__sdg strong {
+  color: var(--bioluminescent);
+}
+
+@media (max-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

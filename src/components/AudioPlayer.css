@@ -1,0 +1,63 @@
+.audio-controller {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.audio-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: rgba(10, 25, 47, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.audio-btn:hover {
+  background: rgba(10, 25, 47, 0.6);
+  border-color: rgba(0, 245, 212, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 245, 212, 0.2);
+}
+
+.audio-btn--playing {
+  border-color: rgba(0, 245, 212, 0.8);
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.15);
+}
+
+.audio-waves {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+  margin-bottom: 4px;
+}
+
+.audio-waves span {
+  width: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+.audio-btn--playing .audio-waves span {
+  background: #00f5d4;
+  box-shadow: 0 0 8px rgba(0, 245, 212, 0.4);
+}
+
+.audio-icon {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  opacity: 0.6;
+  font-family: 'Space Grotesk', sans-serif;
+}

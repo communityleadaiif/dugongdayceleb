@@ -1,0 +1,228 @@
+.arcade-section {
+  background: linear-gradient(180deg,
+    rgba(0,10,26,0.95) 0%,
+    rgba(0,29,61,0.3) 50%,
+    rgba(0,8,20,0.95) 100%);
+}
+
+.arcade__title {
+  font-family: var(--font-hero);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-top: var(--space-sm);
+}
+
+.arcade__subtitle {
+  opacity: 0.7;
+  max-width: 600px;
+  margin: var(--space-xs) auto 0;
+}
+
+/* Console Shell */
+.arcade__console {
+  padding: var(--space-xl) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background: rgba(0, 12, 26, 0.6) !important;
+  border-color: rgba(0, 245, 212, 0.2) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LCD LCD Display */
+.arcade__scorebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #00040a;
+  border: 1px solid rgba(0, 245, 212, 0.15);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 15px rgba(0, 245, 212, 0.05);
+}
+
+.arcade__score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.arcade__score-box--high {
+  align-items: flex-end;
+}
+
+.arcade__score-label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--light-cyan);
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+.arcade__score-digits {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--bioluminescent);
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
+}
+
+.arcade__score-box--high .arcade__score-digits {
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(255, 209, 102, 0.4);
+}
+
+/* Canvas screen container */
+.arcade__canvas-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000814;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.arcade__canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 25 / 10;
+  display: block;
+  image-rendering: pixelated;
+  background: #000814;
+  cursor: pointer !important;
+}
+
+/* Menu Overlays */
+.arcade__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 8, 20, 0.85);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  padding: var(--space-md);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.arcade__overlay--gameover {
+  background: rgba(20, 0, 5, 0.85);
+}
+
+.arcade__pixel-badge {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: rgba(0, 245, 212, 0.15);
+  color: var(--bioluminescent);
+  padding: 4px 12px;
+  border: 1px solid var(--bioluminescent);
+  letter-spacing: 2px;
+}
+
+.arcade__pixel-badge--danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--coral);
+  border-color: var(--coral);
+}
+
+.arcade__overlay h3 {
+  font-family: var(--font-hero);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.arcade__overlay p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.arcade__pixel-btn {
+  font-family: 'Courier New', Courier, monospace !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  border-radius: 4px !important;
+  padding: 12px 28px !important;
+  text-transform: uppercase;
+}
+
+.arcade__new-record {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  background: rgba(255, 209, 102, 0.1);
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gold);
+  margin-bottom: 4px;
+}
+
+/* Footer guidelines */
+.arcade__controls-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 24px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.arcade__control-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  color: var(--foam);
+  opacity: 0.7;
+}
+
+.arcade__pixel-key {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.arcade__pixel-icon {
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .arcade__console {
+    padding: var(--space-md) !important;
+  }
+
+  .arcade__scorebar {
+    padding: 8px 16px;
+  }
+
+  .arcade__score-digits {
+    font-size: 1.4rem;
+  }
+
+  .arcade__overlay h3 {
+    font-size: 1.3rem;
+  }
+}

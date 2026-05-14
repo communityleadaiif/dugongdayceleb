@@ -1,0 +1,183 @@
+.legacy {
+  background: linear-gradient(180deg, rgba(0,8,20,0.9) 0%, rgba(0,29,61,0.3) 50%, rgba(0,8,20,0.9) 100%);
+}
+
+.legacy__header {
+  margin-bottom: var(--space-3xl);
+}
+
+.legacy__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-top: var(--space-md);
+  font-style: italic;
+}
+
+.legacy__role {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: var(--space-sm);
+}
+
+.legacy__role-subtitle {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--light-cyan);
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* Grid layout */
+.legacy__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-3xl);
+  align-items: start;
+  margin-bottom: var(--space-4xl);
+}
+
+/* Portrait */
+.legacy__portrait-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.legacy__portrait-frame {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(0, 245, 212, 0.2);
+}
+
+.legacy__portrait-glow {
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at 50% 30%, rgba(0, 245, 212, 0.1) 0%, transparent 60%);
+  animation: rotate-slow 20s linear infinite;
+}
+
+.legacy__portrait-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(0.7) brightness(0.9);
+  transition: filter 0.8s ease;
+}
+
+.legacy__portrait-frame:hover .legacy__portrait-img {
+  filter: saturate(1) brightness(1);
+}
+
+/* Quote */
+.legacy__quote {
+  position: relative;
+  padding: var(--space-xl) !important;
+}
+
+.legacy__quote-icon {
+  margin-bottom: 8px;
+}
+
+.legacy__quote p {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--foam);
+  opacity: 0.9;
+}
+
+.legacy__quote-author {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--bioluminescent);
+  opacity: 0.7;
+}
+
+/* Bio */
+.legacy__bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.legacy__bio-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  opacity: 0.85;
+}
+
+.legacy__bio-text strong {
+  color: var(--bioluminescent);
+}
+
+.legacy__bio-text em {
+  color: var(--gold);
+}
+
+/* Achievements */
+.legacy__achievements {
+  margin-top: var(--space-2xl);
+}
+
+.legacy__achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.legacy__achievement {
+  text-align: center;
+  padding: var(--space-xl) var(--space-lg) !important;
+}
+
+.legacy__achievement-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.legacy__achievement h4 {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--bioluminescent);
+}
+
+.legacy__achievement p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+@media (max-width: 968px) {
+  .legacy__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .legacy__portrait-frame {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .legacy__achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .legacy__achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
