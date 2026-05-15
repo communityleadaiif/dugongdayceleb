@@ -113,23 +113,23 @@ export default function Hero() {
             <span className="hero__stat-label">Cash Prizes</span>
           </div>
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="hero__scroll-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        onClick={() => scrollTo('legacy')}
-      >
-        <span>Dive Deeper</span>
-        <div className="hero__scroll-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </div>
-      </motion.div>
+        {/* Scroll indicator - now part of content flow to prevent overlap */}
+        <motion.div
+          className="hero__scroll-indicator"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 1 }}
+          onClick={() => scrollTo('legacy')}
+        >
+          <span>Dive Deeper</span>
+          <div className="hero__scroll-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }

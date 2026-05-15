@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120px 24px 80px;
+  padding: 120px 24px 100px;
   text-align: center;
   overflow: hidden;
   z-index: 2;
@@ -171,10 +171,7 @@
 
 /* Scroll indicator */
 .hero__scroll-indicator {
-  position: absolute;
-  bottom: 85px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,7 +197,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 90px 12px 120px;
+    padding: 90px 12px 60px;
   }
 
   .hero__title {
