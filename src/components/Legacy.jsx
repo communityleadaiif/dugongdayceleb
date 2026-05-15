@@ -92,14 +92,6 @@ export default function Legacy() {
                 className="legacy__portrait-img"
               />
             </div>
-            {/* Quote */}
-            <div className="legacy__quote glass-card">
-              <svg className="legacy__quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <path d="M9.135 5.015c-3.6.72-6.135 3.54-6.135 7.485 0 3.3 2.28 5.4 4.8 5.4 2.52 0 4.2-1.86 4.2-4.2 0-2.16-1.56-3.84-3.48-4.08.36-2.04 2.04-3.42 4.08-3.78L9.135 5.015zm10.8 0c-3.6.72-6.135 3.54-6.135 7.485 0 3.3 2.28 5.4 4.8 5.4 2.52 0 4.2-1.86 4.2-4.2 0-2.16-1.56-3.84-3.48-4.08.36-2.04 2.04-3.42 4.08-3.78l-3.465-.825z" fill="var(--bioluminescent)" opacity="0.4"/>
-              </svg>
-              <p>"Protecting the environment is not a choice, it is a responsibility we owe to future generations."</p>
-              <span className="legacy__quote-author">— Dr. R. S. Lal Mohan</span>
-            </div>
           </motion.div>
 
           {/* Bio side */}
@@ -109,6 +101,14 @@ export default function Legacy() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, delay: 0.5 }}
           >
+            {/* Quote placed in side of photo */}
+            <div className="legacy__quote glass-card" style={{ marginBottom: '1.5rem' }}>
+              <svg className="legacy__quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M9.135 5.015c-3.6.72-6.135 3.54-6.135 7.485 0 3.3 2.28 5.4 4.8 5.4 2.52 0 4.2-1.86 4.2-4.2 0-2.16-1.56-3.84-3.48-4.08.36-2.04 2.04-3.42 4.08-3.78L9.135 5.015zm10.8 0c-3.6.72-6.135 3.54-6.135 7.485 0 3.3 2.28 5.4 4.8 5.4 2.52 0 4.2-1.86 4.2-4.2 0-2.16-1.56-3.84-3.48-4.08.36-2.04 2.04-3.42 4.08-3.78l-3.465-.825z" fill="var(--bioluminescent)" opacity="0.4"/>
+              </svg>
+              <p>"Protecting the environment is not a choice, it is a responsibility we owe to future generations."</p>
+              <span className="legacy__quote-author">— Dr. R. S. Lal Mohan</span>
+            </div>
             <p className="legacy__bio-text">
               Dr. R. S. Lal Mohan was a distinguished Indian marine biologist and ichthyologist 
               who served as a <strong>Principal Scientist</strong> at the Central Marine Fisheries Research 
