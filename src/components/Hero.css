@@ -172,7 +172,7 @@
 /* Scroll indicator */
 .hero__scroll-indicator {
   position: absolute;
-  bottom: 95px;
+  bottom: 85px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -200,7 +200,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 90px 12px 50px;
+    padding: 90px 12px 120px;
   }
 
   .hero__title {

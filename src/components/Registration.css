@@ -173,6 +173,51 @@
   opacity: 0.7;
 }
 
+.reg-success__follow {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+}
+
+.reg-success__follow p {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.8;
+}
+
+.reg-success__socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.reg-social-link {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s var(--ease-out);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--foam);
+}
+
+.reg-social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.reg-social-link.ig:hover { background: #e4405f; color: white; border-color: #e4405f; }
+.reg-social-link.li:hover { background: #0077b5; color: white; border-color: #0077b5; }
+.reg-social-link.wa:hover { background: #25d366; color: white; border-color: #25d366; }
+
 @media (max-width: 600px) {
   .reg-form-grid {
     grid-template-columns: 1fr;

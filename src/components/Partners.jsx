@@ -11,16 +11,6 @@ const partners = [
   { name: 'Social Media Outreach Partners', role: 'Digital Partner', type: 'pending' },
 ]
 
-const outreach = [
-  { icon: '🎓', label: 'Colleges Across Tamil Nadu' },
-  { icon: '🏛️', label: 'Universities' },
-  { icon: '🏫', label: 'Schools' },
-  { icon: '⚜️', label: 'NCC & NSS Units' },
-  { icon: '💡', label: 'Innovation & Entrepreneurship Cells' },
-  { icon: '🚀', label: 'Incubators & Startup Ecosystems' },
-  { icon: '🔬', label: 'Marine Research Communities' },
-]
-
 export default function Partners() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
@@ -57,24 +47,6 @@ export default function Partners() {
             </motion.div>
           ))}
         </div>
-
-        {/* Outreach targets */}
-        <motion.div
-          className="partners__outreach"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
-          <h3 className="text-center" style={{ marginBottom: '24px' }}>Outreach Targets</h3>
-          <div className="partners__outreach-grid">
-            {outreach.map((item, i) => (
-              <div key={i} className="partners__outreach-item">
-                <span className="partners__outreach-icon">{item.icon}</span>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )

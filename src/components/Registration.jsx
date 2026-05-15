@@ -169,7 +169,17 @@ export default function Registration() {
               <h3>Submission Successful!</h3>
               <p>Your entry has been received. You will receive a confirmation email shortly.</p>
               <p className="reg-success__note">E-Certificates will be distributed within 7 days after results.</p>
-              <button className="btn btn-outline" onClick={resetForm}>Submit Another Entry</button>
+              
+              <div className="reg-success__follow">
+                <p>Follow our official channels for results and future updates:</p>
+                <div className="reg-success__socials">
+                  <a href="https://www.instagram.com/aiif.innovation/" target="_blank" rel="noopener noreferrer" className="reg-social-link ig">Instagram</a>
+                  <a href="https://in.linkedin.com/company/ajkinnovationincubatorfoundation" target="_blank" rel="noopener noreferrer" className="reg-social-link li">LinkedIn</a>
+                  <a href="https://whatsapp.com/channel/0029VbAQruBAO7R8SaWpwi32" target="_blank" rel="noopener noreferrer" className="reg-social-link wa">WhatsApp</a>
+                </div>
+              </div>
+
+              <button className="btn btn-outline" style={{ marginTop: '24px' }} onClick={resetForm}>Submit Another Entry</button>
             </div>
           ) : submitStatus === 'error' ? (
             <div className="reg-error">
