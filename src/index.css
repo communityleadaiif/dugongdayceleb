@@ -104,15 +104,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white);
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h1 { font-size: clamp(2.2rem, 5vw, 4.5rem); }
 h2 {
   font-family: var(--font-hero);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
   text-transform: uppercase;
   letter-spacing: -0.5px;
 }
-h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
-h4 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+h4 { font-size: clamp(1.1rem, 1.8vw, 1.4rem); }
 
 p {
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
@@ -163,7 +163,7 @@ img {
 /* ===== UTILITY CLASSES ===== */
 .section {
   position: relative;
-  padding: var(--space-5xl) var(--space-xl);
+  padding: var(--space-3xl) var(--space-xl);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -174,7 +174,7 @@ img {
 
 .section-compact {
   min-height: auto;
-  padding: var(--space-4xl) var(--space-xl);
+  padding: var(--space-2xl) var(--space-xl);
 }
 
 .container {
@@ -449,7 +449,7 @@ img {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .section {
-    padding: var(--space-3xl) var(--space-md);
+    padding: var(--space-2xl) var(--space-lg);
   }
 
   h1 { font-size: clamp(2rem, 8vw, 3rem); }
@@ -467,7 +467,7 @@ img {
 
 @media (max-width: 480px) {
   .section {
-    padding: var(--space-2xl) var(--space-md);
+    padding: var(--space-xl) var(--space-lg);
   }
 
   .glass-card {
