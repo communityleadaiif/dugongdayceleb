@@ -49,255 +49,374 @@ export const quizQuestions = [
   },
   {
     id: 5,
-    question: "Which ecosystem is the primary habitat of Dugongs?",
+    question: "What is the most defining diet characteristic that sets a dugong apart from a manatee?",
     options: [
-      "Deep ocean trenches",
-      "Seagrass meadows in shallow coastal waters",
-      "Coral reefs in deep waters",
-      "Mangrove forests"
+      "They eat both fish and plants.",
+      "They are the only exclusively marine herbivorous mammals, meaning they never enter freshwater.",
+      "They only eat microscopic plankton.",
+      "They both are strictly carnivores"
     ],
     correct: 1,
-    explanation: "Seagrass meadows, particularly in shallow coastal waters."
+    explanation: "They are the only exclusively marine herbivorous mammals, meaning they never enter freshwater."
   },
   {
     id: 6,
-    question: "Dugongs are commonly known by what nickname?",
+    question: "Which of the following is a primary threat that has pushed the dugong into a \"Vulnerable\" conservation status?",
     options: [
-      "Sea Lions",
-      "Sea Horses",
-      "Sea Cows",
-      "Sea Dogs"
+      "Seagrass habitat destruction and entanglement in fishing nets.",
+      "Overheating in tropical waters.",
+      "Competition with sharks.",
+      "Competition with turtles"
     ],
-    correct: 2,
-    explanation: "Dugongs are commonly known as 'Sea Cows'."
+    correct: 0,
+    explanation: "Seagrass habitat destruction and entanglement in fishing nets."
   },
   {
     id: 7,
-    question: "Which Indian state is famous for Dugong habitats?",
+    question: "Which major marine biosphere reserve in Tamil Nadu, India, is home to a significant population of protected dugongs?",
     options: [
-      "Kerala",
-      "Goa",
-      "Tamil Nadu",
-      "Maharashtra"
+      "Sundarbans Biosphere Reserve",
+      "Gulf of Mannar Biosphere Reserve",
+      "Nanda Devi Biosphere Reserve",
+      "Pichavaram Mangrove Reserve"
     ],
-    correct: 2,
-    explanation: "Tamil Nadu (specifically the Palk Bay and Gulf of Mannar)."
+    correct: 1,
+    explanation: "Gulf of Mannar Biosphere Reserve"
   },
   {
     id: 8,
-    question: "What is the primary food source of Dugongs?",
+    question: "What is the scientific name of a dugong?",
     options: [
-      "Plankton",
-      "Small fish",
-      "Coral polyps",
-      "Seagrass"
+      "Dugong dugon",
+      "Dugong aquaticus",
+      "Dugong marineus"
     ],
-    correct: 3,
-    explanation: "Seagrass is the primary food source of Dugongs."
+    correct: 0,
+    explanation: "Dugong dugon"
   },
   {
     id: 9,
-    question: "Which Sustainable Development Goal focuses on marine life?",
+    question: "Which ocean is the primary habitat of dugongs?",
     options: [
-      "SDG 13: Climate Action",
-      "SDG 14: Life Below Water",
-      "SDG 15: Life on Land",
-      "SDG 6: Clean Water and Sanitation"
+      "Atlantic Ocean",
+      "Arctic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean"
     ],
-    correct: 1,
-    explanation: "SDG 14: Life Below Water."
+    correct: 2,
+    explanation: "Indian Ocean"
   },
   {
     id: 10,
-    question: "Name one major threat to marine biodiversity.",
+    question: "What is the diet of a dugong primarily composed of?",
     options: [
-      "Deforestation",
-      "Habitat destruction such as loss of seagrass beds",
-      "Volcanic eruptions",
-      "Soil erosion"
+      "Plankton",
+      "Seagrass",
+      "Algae",
+      "Fish"
     ],
     correct: 1,
-    explanation: "Habitat destruction, such as the loss of seagrass beds or coral reefs."
+    explanation: "Seagrass"
   },
   {
     id: 11,
-    question: "What is the scientific name of Dugong?",
+    question: "Which of the following countries is known to have a significant population of dugongs?",
     options: [
-      "Trichechus manatus",
-      "Dugong dugon",
-      "Monachus monachus",
-      "Balaenoptera musculus"
+      "Japan",
+      "Russia",
+      "Australia",
+      "Brazil"
     ],
-    correct: 1,
-    explanation: "Dugong dugon is the scientific name of Dugong."
+    correct: 2,
+    explanation: "Australia"
   },
   {
     id: 12,
-    question: "Which ocean surrounds India on three sides?",
+    question: "What is the conservation status of dugongs according to the IUCN Red List?",
     options: [
-      "The Pacific Ocean",
-      "The Atlantic Ocean",
-      "The Indian Ocean",
-      "The Arctic Ocean"
+      "Least Concern",
+      "Critically Endangered",
+      "Vulnerable",
+      "Endangered"
     ],
     correct: 2,
-    explanation: "The Indian Ocean (Arabian Sea, Bay of Bengal, and the Indian Ocean proper)."
+    explanation: "Vulnerable"
   },
   {
     id: 13,
-    question: "What are seagrasses?",
+    question: "How do dugongs communicate?",
     options: [
-      "Types of algae found on rocks",
-      "Marine flowering plants that form dense underwater meadows",
-      "Floating weeds on ocean surfaces",
-      "Freshwater plants found in rivers"
+      "Visual displays",
+      "Sign language",
+      "Telepathy",
+      "Vocalizations"
     ],
-    correct: 1,
-    explanation: "Marine flowering plants that form dense underwater meadows, essential for carbon sequestration."
+    correct: 3,
+    explanation: "Vocalizations"
   },
   {
     id: 14,
-    question: "Which organization conducts marine fisheries research in India?",
+    question: "How long can dugongs hold their breath underwater?",
     options: [
-      "ISRO",
-      "DRDO",
-      "CMFRI",
-      "BARC"
+      "2 minutes",
+      "30 minutes",
+      "1 hour",
+      "6 minutes"
     ],
-    correct: 2,
-    explanation: "The CMFRI, where Dr. Lal Mohan served as a principal scientist."
+    correct: 3,
+    explanation: "6 minutes"
   },
   {
     id: 15,
-    question: "What is marine pollution?",
+    question: "How many living species are there in the order Sirenia?",
     options: [
-      "Pollution caused by ships only",
-      "Introduction of harmful substances into the ocean that damage ecosystems",
-      "Natural oil seeps in the ocean",
-      "Salt content in seawater"
+      "Five",
+      "Three",
+      "Four",
+      "Six"
     ],
-    correct: 1,
-    explanation: "The introduction of harmful substances (like plastic or chemicals) into the ocean."
+    correct: 2,
+    explanation: "Four"
   },
   {
     id: 16,
-    question: "Which ecosystem protects coastlines from erosion?",
+    question: "What is the local name for dugongs among the Tamil people?",
     options: [
-      "Deserts",
-      "Mangroves and Coral Reefs",
-      "Glaciers",
-      "Grasslands"
+      "Avolia",
+      "Muhudu Ura",
+      "Balguja",
+      "Duyung"
     ],
-    correct: 1,
-    explanation: "Mangroves and Coral Reefs protect coastlines from erosion."
+    correct: 0,
+    explanation: "Avolia"
   },
   {
     id: 17,
-    question: "What is biodiversity?",
+    question: "To which group are dugongs more closely related?",
     options: [
-      "The number of humans in a region",
-      "The variety of all living species on Earth",
-      "The depth of the ocean",
-      "The amount of rainfall in an area"
+      "Whales",
+      "Dolphins",
+      "Seals",
+      "Elephants"
     ],
-    correct: 1,
-    explanation: "The variety of all living species on Earth, including plants, animals, and microorganisms."
+    correct: 3,
+    explanation: "Elephants"
   },
   {
     id: 18,
-    question: "Name one endangered marine species.",
+    question: "What is the color of a dugong's skin at birth?",
     options: [
-      "Goldfish",
-      "Common Carp",
-      "Dugong",
-      "Tilapia"
+      "Dark grey",
+      "Pale cream colour",
+      "Brownish-to-dark-grey",
+      "Black"
     ],
-    correct: 2,
-    explanation: "The Dugong (often called the 'Gentle Giant')."
+    correct: 1,
+    explanation: "Pale cream colour"
   },
   {
     id: 19,
-    question: "What is the role of coral reefs?",
+    question: "What is the primary function of the heavy bones in dugongs?",
     options: [
-      "They produce freshwater",
-      "They act as barriers against storms and home for 25% of marine species",
-      "They generate electricity",
-      "They filter air pollution"
+      "To store energy",
+      "To aid in rapid swimming",
+      "To provide strength for digging in the seabed",
+      "To act as ballast to help keep them suspended slightly below the water's surface"
     ],
-    correct: 1,
-    explanation: "They act as barriers against storms and provide a home for 25% of all marine species."
+    correct: 3,
+    explanation: "To act as ballast to help keep them suspended slightly below the water's surface"
   },
   {
     id: 20,
-    question: "What causes ocean acidification?",
+    question: "What do dugongs ingest when they eat seagrass?",
     options: [
-      "Too much oxygen in the water",
-      "Excess Carbon Dioxide (CO₂) absorbed by seawater",
-      "Rising sea levels",
-      "Volcanic activity under the sea"
+      "Only the flowers of the seagrass.",
+      "The whole plant, including the roots.",
+      "Only the leaves of the seagrass.",
+      "Only the stems of the seagrass."
     ],
     correct: 1,
-    explanation: "Excess CO₂ being absorbed by seawater from the atmosphere."
+    explanation: "The whole plant, including the roots."
   },
   {
     id: 21,
-    question: "Why are oceans important for climate regulation?",
+    question: "To which taxonomic Order do dugongs (Dugong dugon) and manatees belong?",
     options: [
-      "They reflect sunlight",
-      "They absorb heat and act as a massive carbon sink",
-      "They create wind patterns only",
-      "They cool the Earth by evaporation only"
+      "Cetacea",
+      "Carnivora",
+      "Sirenia",
+      "Pinnipedia"
     ],
-    correct: 1,
-    explanation: "They absorb heat and act as a massive carbon sink, balancing the Earth's temperature."
+    correct: 2,
+    explanation: "Sirenia"
   },
   {
     id: 22,
-    question: "Which gas is mainly responsible for global warming?",
+    question: "Which of the following morphological features is a primary distinguishing characteristic between a dugong and a manatee?",
     options: [
-      "Oxygen (O₂)",
-      "Nitrogen (N₂)",
-      "Carbon Dioxide (CO₂)",
-      "Helium (He)"
+      "Dugongs have hind flippers, whereas manatees have none.",
+      "Dugongs possess a fluked, dolphin-like tail, whereas manatees have a paddle-shaped tail.",
+      "Dugongs are strictly freshwater animals, whereas manatees are strictly marine.",
+      "Dugongs lack whiskers (vibrissae) entirely, while manatees are covered in them."
     ],
-    correct: 2,
-    explanation: "Carbon Dioxide (CO₂) is the main greenhouse gas responsible for global warming."
+    correct: 1,
+    explanation: "Dugongs possess a fluked, dolphin-like tail, whereas manatees have a paddle-shaped tail."
   },
   {
     id: 23,
-    question: "What is sustainable fishing?",
+    question: "Dugongs are specialized benthic feeders. Which anatomical adaptation allows them to efficiently graze on seagrasses growing in sediment?",
     options: [
-      "Catching as many fish as possible",
-      "Using explosives to catch fish",
-      "Fishing at a rate that maintains the species population and ecosystem health",
-      "Fishing in deep waters only"
+      "Along, highly maneuverable muscular trunk.",
+      "Sharp, serrated teeth designed for tearing tough fibers.",
+      "A downward-turned (ventrally deflected) snout with a flexible, horseshoe-shaped upper lip.",
+      "An expandable throat pouch used to swallow large volumes of sand and filter out plants."
     ],
     correct: 2,
-    explanation: "Fishing at a rate that maintains the population of a species and the health of the ecosystem."
+    explanation: "A downward-turned (ventrally deflected) snout with a flexible, horseshoe-shaped upper lip."
   },
   {
     id: 24,
-    question: "Which marine ecosystem is called the 'nursery of the sea'?",
+    question: "What is the primary sensory modality used by dugongs to navigate, detect seagrass, and interact in murky coastal waters?",
     options: [
-      "Deep sea vents",
-      "Estuaries and Mangroves",
-      "Open ocean",
-      "Ice caps"
+      "Highly acute color vision.",
+      "Echolocation via a specialized fatty melon.",
+      "Tactile sensation via specialized sensory hairs (vibrissae) covering their snout and body.",
+      "Electro-reception through pores in their snout."
     ],
-    correct: 1,
-    explanation: "Estuaries and Mangroves are called the 'nursery of the sea'."
+    correct: 2,
+    explanation: "Tactile sensation via specialized sensory hairs (vibrissae) covering their snout and body."
   },
   {
     id: 25,
-    question: "Why should Dugongs be protected?",
+    question: "Dugongs do not possess external ears. How does sound travel to their inner ear?",
     options: [
-      "They are good for tourism only",
-      "They maintain seagrass meadows vital for carbon storage and fisheries",
-      "They produce pearls",
-      "They control shark populations"
+      "Through their open mouth and down the trachea.",
+      "Via the lipid-filled lower jaw bone, similar to dolphins and whales.",
+      "Through tiny, skin-covered auditory canals located just behind the eyes.",
+      "They are completely deaf and rely entirely on water vibrations felt through their skin."
+    ],
+    correct: 2,
+    explanation: "Through tiny, skin-covered auditory canals located just behind the eyes."
+  },
+  {
+    id: 26,
+    question: "Which extinct sirenian was a close relative of the dugong, grew upto 9 meters in length ,lived in cold sub-Arctic waters, and was hunted to extinction within 27 years of its discovery?",
+    options: [
+      "Florida Manatee (Trichechus manatus latirostris)",
+      "Steller’s Sea Cow (Hydrodamalis gigas)",
+      "Amazonian Manatee (Trichechus inunguis)",
+      "Halitherium"
     ],
     correct: 1,
-    explanation: "As the 'Gardener of the Sea,' they maintain the health of seagrass meadows, vital for carbon storage and local fisheries."
+    explanation: "Steller’s Sea Cow (Hydrodamalis gigas)"
+  },
+  {
+    id: 27,
+    question: "Which sub-order of cetaceans uses baleen plates made of keratin to filter tiny krill and schooling fish from the water?",
+    options: [
+      "Odontoceti",
+      "Mysticeti",
+      "Archaeoceti",
+      "Sirenia"
+    ],
+    correct: 1,
+    explanation: "Mysticeti"
+  },
+  {
+    id: 28,
+    question: "Which of the following represents the single greatest global threat to the survival of dugong populations today?",
+    options: [
+      "Natural predation by killer whales and salt-water crocodiles.",
+      "Anthropogenic habitat loss (destruction of seagrass beds) and accidental drowning in gillnets and shark nets.",
+      "Viral diseases spreading from domestic livestock.",
+      "Competition with green sea turtles for feeding grounds."
+    ],
+    correct: 1,
+    explanation: "Anthropogenic habitat loss (destruction of seagrass beds) and accidental drowning in gillnets and shark nets."
+  },
+  {
+    id: 29,
+    question: "Which country banned all hunting of dugongs within its waters and also banned drift net fishing?",
+    options: [
+      "Philippines",
+      "United Arab Emirates",
+      "India",
+      "Japan"
+    ],
+    correct: 2,
+    explanation: "India"
+  },
+  {
+    id: 30,
+    question: "What socio-political issue impedes dugong conservation in many developing countries?",
+    options: [
+      "Technological limitations",
+      "Insufficient funding for research",
+      "Socio-political needs",
+      "Lack of public awareness"
+    ],
+    correct: 2,
+    explanation: "Socio-political needs"
+  },
+  {
+    id: 31,
+    question: "Which human activity does not negatively affect seagrass meadows?",
+    options: [
+      "Bird watching",
+      "Mining",
+      "Trawling",
+      "Dredging"
+    ],
+    correct: 0,
+    explanation: "Bird watching"
+  },
+  {
+    id: 32,
+    question: "Sailors used to believe Dugongs were...?",
+    options: [
+      "Mermaids",
+      "Aliens",
+      "Neptunes water cattle",
+      "Predators"
+    ],
+    correct: 0,
+    explanation: "Mermaids"
+  },
+  {
+    id: 33,
+    question: "How do dugongs and manatees contribute to their ecosystems?",
+    options: [
+      "By promoting sea grass growth and aiding in nutrient recycling",
+      "By controlling jellyfish populations",
+      "By predating on invasive species",
+      "By creating breeding grounds for fish"
+    ],
+    correct: 0,
+    explanation: "By promoting sea grass growth and aiding in nutrient recycling"
+  },
+  {
+    id: 34,
+    question: "Where in India, Dugong Conservation Reserve implemented?",
+    options: [
+      "Gulf of Mannar",
+      "Palk Bay",
+      "Gulf of Kutch",
+      "Sunderbans"
+    ],
+    correct: 1,
+    explanation: "Palk Bay"
+  },
+  {
+    id: 35,
+    question: "The largest seagrass region occur in which state of India",
+    options: [
+      "Tamil Nadu",
+      "Kerala",
+      "Odissa",
+      "Gujarat"
+    ],
+    correct: 0,
+    explanation: "Tamil Nadu"
   }
 ];
 

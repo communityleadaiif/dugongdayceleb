@@ -88,7 +88,7 @@ export default function Quiz() {
         >
           <span className="badge">🧠 Challenge Yourself</span>
           <h2 className="quiz__main-title" style={{ marginTop: '16px' }}>Marine Conservation Quiz</h2>
-          <p style={{ marginTop: '8px', opacity: 0.6 }}>Test your knowledge — 25 questions on marine conservation, Dugongs, and ocean ecology</p>
+          <p style={{ marginTop: '8px', opacity: 0.6 }}>Test your knowledge — {quizQuestions.length} questions on marine conservation, Dugongs, and ocean ecology</p>
           <div className="section-divider" />
         </motion.div>
 
@@ -105,7 +105,7 @@ export default function Quiz() {
               >
                 <div className="quiz-intro__icon">🐋</div>
                 <h3>Ready to Dive In?</h3>
-                <p>25 Multiple Choice Questions about marine conservation, Dugong ecology, and the legacy of Dr. R. S. Lal Mohan.</p>
+                <p>{quizQuestions.length} Multiple Choice Questions about marine conservation, Dugong ecology, and the legacy of Dr. R. S. Lal Mohan.</p>
                 <div className="quiz-intro__details">
                   <div className="quiz-intro__detail">
                     <span>⏱️</span>
@@ -113,7 +113,7 @@ export default function Quiz() {
                   </div>
                   <div className="quiz-intro__detail">
                     <span>📝</span>
-                    <span>25 MCQs</span>
+                    <span>{quizQuestions.length} MCQs</span>
                   </div>
                   <div className="quiz-intro__detail">
                     <span>🏆</span>
