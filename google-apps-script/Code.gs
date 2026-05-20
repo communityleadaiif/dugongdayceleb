@@ -14,7 +14,13 @@ const BACKEND_SECRET_TOKEN = 'ok2026_dugong_secure_handshake_token_9821';
 
 // Server-side limits
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
-const ALLOWED_MIME_TYPES = ['image/jpeg', 'image/png', 'application/pdf'];
+const ALLOWED_MIME_TYPES = [
+  'image/jpeg', 
+  'image/png', 
+  'application/pdf', 
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 
+  'application/msword'
+];
 
 /**
  * Handle GET requests: Fetch current stats (Visitors & Pledges)

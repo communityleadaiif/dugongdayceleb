@@ -144,7 +144,6 @@ export default function Competitions() {
                           <li>Duration: 10–15 Minutes</li>
                           <li>E-Certificate for all participants</li>
                           <li>Marine Conservation Pledge at the end</li>
-                          <li>Exciting Cash Prizes for winners</li>
                         </ul>
                       </div>
                     )}

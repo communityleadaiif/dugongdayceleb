@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import './Hero.css'
 
 // Logos from public directory
-const ajkLogo = '/ajk-aiif-logo.png'
-const cmfriLogo = '/cmfri-logo.png'
+const ajkLogo = '/ajk-college-logo.png'
+const cmfriLogo = '/cmfri-new-logo.jpg'
 
 export default function Hero() {
   const scrollTo = (id) => {
@@ -28,9 +28,15 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <img src={ajkLogo} alt="AJK Group of Institutions & AIIF" className="hero__logo hero__logo--ajk" />
-          <div className="hero__logo-divider" />
-          <img src={cmfriLogo} alt="CMFRI" className="hero__logo hero__logo--cmfri" />
+          <div className="hero__logo-wrapper">
+            <img src={ajkLogo} alt="AJK Group of Institutions" className="hero__logo hero__logo--ajk" />
+            <span className="hero__logo-label">AJK Group of Institutions</span>
+          </div>
+          <div className="hero__collab-tag">In Collaboration with</div>
+          <div className="hero__logo-wrapper">
+            <img src={cmfriLogo} alt="CMFRI" className="hero__logo hero__logo--cmfri" />
+            <span className="hero__logo-label">CMFRI</span>
+          </div>
         </motion.div>
 
         {/* Badge */}
@@ -65,16 +71,15 @@ export default function Hero() {
         </motion.p>
 
         {/* Tribute line */}
-        <motion.p
+        <motion.div
           className="hero__tribute"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.3 }}
         >
           Honoring the Legacy of <span className="text-gold">Dr. R. S. Lal Mohan</span>
-          <br />
-          <em>Father of Eco-Awareness</em>
-        </motion.p>
+          <div className="hero__tribute-title">Father of Eco-Awareness</div>
+        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div

@@ -432,7 +432,7 @@ export const competitionData = [
     duration: '10–15 Minutes',
     participation: 'Individual',
     certificate: 'E-Certificate for All Participants',
-    prizes: 'Exciting Cash Prizes + Certificates',
+    prizes: 'E-Certificate for All Participants',
     pledge: 'Marine Conservation Pledge at end',
     color: '#00f5d4',
     description: 'Test your knowledge about marine conservation, Dugongs, and ocean ecosystems in this exciting online quiz.'
@@ -513,32 +513,32 @@ export const competitionData = [
 
 export const timelineEvents = [
   {
-    date: '16 May 2026',
-    day: 'Saturday',
+    date: '21 May 2026',
+    day: 'Thursday',
     title: 'Registration Opens',
     description: 'Portal opens for all national competitions. Start registering now!',
     icon: '🚀',
     status: 'active'
   },
   {
-    date: '16 May 2026',
-    day: 'Saturday',
+    date: '21 May 2026',
+    day: 'Thursday',
     title: 'Competition Start Date',
     description: 'Quiz, Article Writing, and Drawing competitions begin.',
     icon: '🏁',
     status: 'active'
   },
   {
-    date: 'To Be Announced',
-    day: '',
+    date: '25 May 2026',
+    day: 'Monday',
     title: 'Last Date for Submission',
     description: 'Deadline for all article and drawing submissions.',
     icon: '📅',
-    status: 'upcoming'
+    status: 'active'
   },
   {
-    date: 'To Be Announced',
-    day: '',
+    date: '26–27 May 2026',
+    day: 'Tue–Wed',
     title: 'Evaluation Process',
     description: 'Expert jury evaluates all submissions across categories.',
     icon: '⚖️',
@@ -547,8 +547,8 @@ export const timelineEvents = [
   {
     date: '28 May 2026',
     day: 'World Dugong Day',
-    title: 'Winner Announcement',
-    description: 'Winners announced on World Dugong Day!',
+    title: 'Winner Prize Distribution',
+    description: 'Winner prize distribution ceremony on World Dugong Day!',
     icon: '🏆',
     status: 'highlight'
   },
