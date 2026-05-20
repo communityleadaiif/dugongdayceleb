@@ -212,6 +212,62 @@
   opacity: 0.7;
 }
 
+/* Certificate Preview Container */
+.pledge__cert-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  width: 100%;
+  max-width: 600px;
+  margin: var(--space-md) auto;
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(8px);
+}
+
+.pledge__cert-preview {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 1024 / 723;
+}
+
+.pledge__cert-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pledge__cert-name-overlay {
+  position: absolute;
+  /* Line is at Y=443 / 723 = 61.27%. Place name baseline slightly above at 59% */
+  top: 59.2%;
+  left: 50.5%;
+  transform: translate(-50%, -100%);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(14px, 3vw, 24px);
+  font-weight: 600;
+  font-style: italic;
+  color: #0f3057; /* Deep Navy */
+  text-shadow: 0 0 1px rgba(15, 48, 87, 0.2);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.pledge__download-btn {
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(255, 209, 102, 0.2);
+}
+
 .pledge__success-badge {
   display: flex;
   align-items: center;

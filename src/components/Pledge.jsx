@@ -84,6 +84,8 @@ export default function Pledge() {
     logVisitor();
   }, []);
 
+  const [downloading, setDownloading] = useState(false);
+
   const handleSign = async () => {
     if (!name.trim() || !accepted) return;
     
@@ -103,6 +105,56 @@ export default function Pledge() {
       } catch (err) {
         console.error('Pledge save error:', err);
       }
+    }
+  };
+
+  const downloadCertificate = async () => {
+    if (downloading) return;
+    setDownloading(true);
+    
+    try {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.src = '/pledge-certificate-template.jpg';
+      img.crossOrigin = 'anonymous';
+      
+      img.onload = async () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        
+        // Wait for font to load to guarantee high-fidelity rendering
+        try {
+          await document.fonts.load('italic 500 38px "Cormorant Garamond"');
+        } catch (e) {
+          console.warn('Font load failed, falling back to system serif', e);
+        }
+        
+        ctx.font = 'italic 500 38px "Cormorant Garamond", Georgia, serif';
+        ctx.fillStyle = '#0f3057'; // Deep blue/navy to match the certificate theme
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        
+        const formattedName = name.trim().replace(/\b\w/g, c => c.toUpperCase());
+        // Y=443 is the signature line, Y=430 centers the baseline perfectly above it
+        ctx.fillText(formattedName, 512, 430);
+        
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.98);
+        const link = document.createElement('a');
+        link.download = `${formattedName}_AJK Dugong Day Celebration.jpg`;
+        link.href = dataUrl;
+        link.click();
+        setDownloading(false);
+      };
+      
+      img.onerror = () => {
+        console.error('Failed to load certificate template image');
+        setDownloading(false);
+      };
+    } catch (err) {
+      console.error('Failed to generate certificate', err);
+      setDownloading(false);
     }
   };
 
@@ -229,10 +281,38 @@ export default function Pledge() {
               <div className="pledge__success-icon">🎉</div>
               <h3>Thank You, {name}!</h3>
               <p>You are now an Ocean Guardian.</p>
-              <p className="pledge__success-note">
-                Your pledge joins others in protecting marine life.
-              </p>
-              <div className="pledge__success-badge glass-card">
+              
+              <div className="pledge__cert-preview-container">
+                <div className="pledge__cert-preview">
+                  <img 
+                    src="/pledge-certificate-template.jpg" 
+                    alt="Marine Conservation Guardian Certificate" 
+                    className="pledge__cert-image" 
+                  />
+                  <div className="pledge__cert-name-overlay">
+                    {name.trim().replace(/\b\w/g, c => c.toUpperCase())}
+                  </div>
+                </div>
+                
+                <motion.button 
+                  className="btn btn-gold pledge__download-btn"
+                  onClick={downloadCertificate}
+                  disabled={downloading}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {downloading ? (
+                    <>
+                      <span className="reg-spinner" style={{ marginRight: '8px' }}></span>
+                      Generating Certificate...
+                    </>
+                  ) : (
+                    <>📥 Download Certificate</>
+                  )}
+                </motion.button>
+              </div>
+
+              <div className="pledge__success-badge glass-card" style={{ marginTop: '24px' }}>
                 <span>🏅</span>
                 <div>
                   <strong>Marine Conservation Guardian</strong>
