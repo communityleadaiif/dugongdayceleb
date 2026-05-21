@@ -306,3 +306,23 @@
     box-sizing: border-box;
   }
 }
+
+.hero__crawler-link {
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  z-index: 5;
+}
+
+.crawler-anchor {
+  color: var(--bioluminescent);
+  text-decoration: underline;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
+}
+
+.crawler-anchor:hover {
+  color: var(--gold);
+  text-shadow: 0 0 15px rgba(255, 183, 3, 0.6);
+}

@@ -1,0 +1,14 @@
+# World Dugong Day Celebration
+> An event dedicated to raising awareness and celebrating the conservation of Dugongs.
+
+## Website
+- Official Event Site: https://dugongdayceleb.vercel.app/
+
+## Registration
+- Audience Registration Link: https://tinyurl.com/dugongday
+
+## Event Information
+- **Event Name:** World Dugong Day Celebration
+- **Date:** May 28, 2026
+- **Audience:** Open to everyone interested in marine conservation.
+- **Goal:** To register participants, spread awareness, and provide access to event programs.

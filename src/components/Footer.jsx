@@ -33,6 +33,11 @@ export default function Footer() {
               <li><a href="#competitions">Competitions</a></li>
               <li><a href="#quiz">Quick Quiz</a></li>
               <li><a href="#register">Register</a></li>
+              <li>
+                <a href="https://tinyurl.com/dugongday" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)', fontWeight: 'bold', textDecoration: 'underline' }}>
+                  Register for Dugong Day Here
+                </a>
+              </li>
             </ul>
           </div>
 

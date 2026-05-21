@@ -96,6 +96,24 @@ export default function Hero() {
           </button>
         </motion.div>
 
+        {/* Highly visible plain text link for search engine crawlers */}
+        <motion.div
+          className="hero__crawler-link"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+          style={{ marginTop: '16px' }}
+        >
+          <a
+            href="https://tinyurl.com/dugongday"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="crawler-anchor"
+          >
+            Register for Dugong Day Here
+          </a>
+        </motion.div>
+
         {/* Stats */}
         <motion.div
           className="hero__stats"
