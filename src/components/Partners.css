@@ -2,56 +2,32 @@
   background: linear-gradient(180deg, rgba(0,8,20,0.8) 0%, rgba(0,8,20,0.95) 100%);
 }
 
-.partners__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-bottom: var(--space-3xl);
+.partners__banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 534px;
+  margin: 0 auto var(--space-3xl);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.partners__card {
-  text-align: center;
-  padding: var(--space-xl) var(--space-lg) !important;
-  transition: all 0.4s;
+.partners__banner-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+  object-fit: contain;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.partners__card--organizer {
-  border-color: rgba(0, 245, 212, 0.15);
-}
-
-.partners__card--media {
-  border-color: rgba(255, 209, 102, 0.15);
-}
-
-.partners__card--pending {
-  opacity: 0.5;
-  border-style: dashed;
-}
-
-.partners__card-role {
-  font-family: var(--font-accent);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--bioluminescent);
-  opacity: 0.6;
-}
-
-.partners__card-name {
-  font-family: var(--font-accent);
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin-top: 8px;
-}
-
-.partners__card-status {
-  display: inline-block;
-  margin-top: 8px;
-  font-family: var(--font-accent);
-  font-size: 0.7rem;
-  color: var(--gold);
-  opacity: 0.5;
-  font-style: italic;
+.partners__banner-img:hover {
+  transform: translateY(-2px);
 }
 
 /* Outreach */

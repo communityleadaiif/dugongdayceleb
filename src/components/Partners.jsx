@@ -2,15 +2,6 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import './Partners.css'
 
-const partners = [
-  { name: 'AJK Group of Institutions', role: 'Organizer', type: 'organizer' },
-  { name: 'AJK Innovation Incubator Foundation (AIIF)', role: 'Organizer', type: 'organizer' },
-  { name: 'Magilchi FM', role: 'Media Partner', type: 'media' },
-  { name: 'FM Radio Partners', role: 'Radio Partner', type: 'pending' },
-  { name: 'Newspaper Media Partners', role: 'Print Media Partner', type: 'pending' },
-  { name: 'Social Media Outreach Partners', role: 'Digital Partner', type: 'pending' },
-]
-
 export default function Partners() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
@@ -29,24 +20,19 @@ export default function Partners() {
           <div className="section-divider" />
         </motion.div>
 
-        {/* Partners grid */}
-        <div className="partners__grid">
-          {partners.map((p, i) => (
-            <motion.div
-              key={i}
-              className={`partners__card glass-card partners__card--${p.type}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 * i, duration: 0.6 }}
-            >
-              <span className="partners__card-role">{p.role}</span>
-              <h4 className="partners__card-name">{p.name}</h4>
-              {p.type === 'pending' && (
-                <span className="partners__card-status">Coming Soon</span>
-              )}
-            </motion.div>
-          ))}
-        </div>
+        {/* Partners banner */}
+        <motion.div
+          className="partners__banner-container"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <img
+            src="/partners-banner.png"
+            alt="Event Partners - Tech, Innovation, Radio, and Print Media Partners"
+            className="partners__banner-img"
+          />
+        </motion.div>
       </div>
     </section>
   )
